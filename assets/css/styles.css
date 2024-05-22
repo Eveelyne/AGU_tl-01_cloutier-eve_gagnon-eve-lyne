@@ -1,3 +1,7 @@
+:root {
+    overflow-x: hidden;
+}
+
 * {
     margin: 0;
 }
@@ -20,7 +24,8 @@ header {
 }
 
 main {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
 
 }
