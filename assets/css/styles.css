@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 10rem;
+    background-color: rgb(136, 199, 255);
+}
+
+main {
+    display: flex;
+    gap: 1rem;
+
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 10rem;
+    background-color: rgb(136, 199, 255);
+}
