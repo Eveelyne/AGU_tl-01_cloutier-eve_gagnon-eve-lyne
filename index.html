@@ -4,43 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="./assets/js/header.js" defer></script>
     <script src="./assets/js/RGraph.common.core.js" defer></script>
     <script src="./assets/js/RGraph.segmented.js" defer></script>
     <script src="./assets/js/RGraph.svg.common.core.js" defer></script>
     <script src="./assets/js/RGraph.svg.hbar.js" defer></script>
     <script src="./assets/js/main.js" defer></script>
-    <title>Exemple RGraph</title>
+<title>TL1 | RGRAPH</title>
 </head>
 <body>
     <header>
-        <h1>Travail long 01 - Graphiques RGraph</h1>
+        <div class="header-title">
+            <h2>TRAVAIL LONG 01</h2>
+            <h1>Graphiques <span class="gras">RGRAPH</span></h1>
+            <p>Une librairie très pratique!</p>
+            <div class="border top"></div>
+        </div>
     </header>
     <main>
+        <h2 class="grid-title">Attrait touristique pour les activités de plein air au Québec</h2>
         <div class="graphique-circulaire">
-            <h2>Diagramme circulaire segmenté</h2>
-            <canvas id="cvs" width="350" height="350">[No canvas support]</canvas>
+            <h3>Séjour d'une nuit en plein air au Québec</h3>
+            <canvas id="cvs">[No canvas support]</canvas>
         </div>
     
         <div style="float: right">
-            <h2>Diagramme à barres horizontales</h2>
+            <h3>Diagramme à barres horizontales</h3>
             <div style="width: 500px; height: 300px; display: inline-block; background-color: black" id="chart-container"></div>
         </div>
         <div>
-            <h2>Diagramme</h2>
+            <h3>Diagramme</h3>
         </div>
         <div>
-            <h2>Diagramme</h2>
+            <h3>Diagramme</h3>
         </div>
         <div>
-            <h2>Diagramme</h2>
+            <h3>Diagramme</h3>
         </div>
         <div>
-            <h2>Diagramme</h2>
+            <h3>Diagramme</h3>
         </div>
-
+        
     </main>
     <footer>
-        <span>Eve Cloutier et Eve-Lyne Gagnon | <time datetime="2024-06-07">7 juin 2024</time><span>
+        <div class="border bottom"></div>
+        <div class="authors">
+            <p>EVE CLOUTIER · EVE-LYNE GAGNON</p>
+            <p><time datetime="2024-06-07">7 juin 2024</time></p>
+        </div>
     </footer>
 </body>
 </html>

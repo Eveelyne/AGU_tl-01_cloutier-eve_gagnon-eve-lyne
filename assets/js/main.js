@@ -3,7 +3,7 @@ const beigneChart = () => {
     segmented = new RGraph.Segmented({
         id: 'cvs', //référencie le canvas dans lequel le graphique sera présenté
         max: 100,
-        value: 70,
+        value: 15,
         options: {
             labelsCenterUnitsPost: '%',
             labelsCenterColor: '#aaa',
