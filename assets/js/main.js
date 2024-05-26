@@ -1,28 +1,20 @@
 const beigneChart = () => {
-
     segmented = new RGraph.Segmented({
-        id: 'cvs', //référencie le canvas dans lequel le graphique sera présenté
+        id: 'cvs',
         max: 100,
-        value: 70,
+        value: 15,
         options: {
             labelsCenterUnitsPost: '%',
             labelsCenterColor: '#aaa',
             responsive: [
-                {maxWidth: null,width: 350,height: 350,options:{width: 55,labelsCenterSize: 60},parentCss:{'float':'right', textAlign:'none'}},
-                {maxWidth: 700,width: 250,height: 250,options:{width: 40,labelsCenterSize: 45},parentCss:{'float':'none', textAlign:'center'}}
+                {maxWidth: null, width: 350, height: 350, options: {width: 55, labelsCenterSize: 60}, parentCss: {'float': 'right', textAlign: 'none'}},
+                {maxWidth: 700, width: 250, height: 250, options: {width: 40, labelsCenterSize: 45}, parentCss: {'float': 'none', textAlign: 'center'}}
             ]
         }
     }).roundRobin({frames: 60});
 
-
-
-    //
-    // If the chart is clicked then adjust the value
-    //
-    segmented.canvas.addEventListener('click', function (e)
-    {
+    segmented.canvas.addEventListener('click', function (e) {
         var value = segmented.getValue(e);
-        
         if (value) {
             segmented.value = value;
             segmented.grow();
@@ -31,49 +23,28 @@ const beigneChart = () => {
 }
 
 const svgHorChart = () => {
-    // The data for the chart
-    data   = [70,80,60,50,40,80];
-    
-    // The labels for the chart. These labels are positioned on the
-    // left-hand-side as normal and the data is also given as the
-    // labelsAbove labels.
-    labels = ['JavaScript','HTML','CSS','React','Ruby','Python'];
+    data = [90, 42, 40, 31, 25];
+    labels = ['Randonnée pédestre', 'Baignade/plage', 'Camping (tente)', 'Vélo', 'Camping (VR)'];
 
-    // Create the HBar chart that becomes the gray backgrounds to
-    // the bars. Note that all of the bits of data are set to one.
-    // This means that all of the gray bars on the chart will be
-    // as far right as it goes.
     bar_bg = new RGraph.SVG.HBar({
         id: 'chart-container',
-        data: [1,1,1,1,1,1],
+        data: [1, 1, 1, 1, 1],
         options: {
             colors: ['gray'],
             xaxisScale: false,
             backgroundGrid: false,
             marginInner: 5,
-            
-            // If these aren't given then the marginLeftAuto will make
-            // the left margin 0 when it actually needs to match the
-            // other chart.
-            yaxisLabels: labels, 
-            
-            // Don't want to see any text on the background chart.
+            yaxisLabels: labels,
             textColor: 'rgba(0,0,0,0)',
-
-            // Add the labels that you can see on the right of the
-            // chart.
             labelsAboveColor: 'white',
             labelsAboveSpecific: data,
             responsive: [
-                {maxWidth: null, width: 500, height: 300, options: {textSize: 12},parentCss:{'float':'right', textAlign:'none'}},
-                {maxWidth: 800, width: 400,  height: 250, options: {textSize: 10},parentCss:{'float':'none', textAlign:'center'}}
+                {maxWidth: null, width: 500, height: 300, options: {textSize: 12}, parentCss: {'float': 'right', textAlign: 'none'}},
+                {maxWidth: 800, width: 400, height: 250, options: {textSize: 10}, parentCss: {'float': 'none', textAlign: 'center'}}
             ]
         }
     }).draw();
 
-
-    // This is the orange HBar chart that you can see and which
-    // represents the actual values.
     bar_fg = new RGraph.SVG.HBar({
         id: 'chart-container',
         data: data,
@@ -86,17 +57,86 @@ const svgHorChart = () => {
             marginInner: 5,
             responsive: [
                 {maxWidth: null, width: 500, height: 300, options: {textSize: 12}},
-                {maxWidth: 800, width: 400,  height: 250, options: {textSize: 10}}
+                {maxWidth: 700, width: 300, height: 250, options: {textSize: 10}}
             ]
         }
-    
-    // The orange chart uses the wave() effect.
-    }).grow({callback: function ()
+    }).grow({
+        callback: function () {
+            bar_bg.set('labelsAbove', true);
+            RGraph.SVG.redraw();
+        }
+    });
+}
+
+const radarChart = () => {
+    var radar = new RGraph.Radar({
+        id: 'radar-chart',
+        data: [40, 27, 33, 32, 32, 29],
+        options: {
+            labels: ['Amical', 'Sécuritaire', 'Dépaysant', 'Authentique', 'Unique', 'Familiale'],
+            colors: ['#385644'],
+            textSize: 12,
+            textColor: 'black',
+            backgroundGrid: true,
+            labelsAbove: true,
+            labelsAboveSpecific: [40, 27, 33, 32, 32, 29],
+            responsive: [
+                {maxWidth: null, width: 500, height: 250, options: {textSize: 12}, parentCss: {'float': 'right', textAlign: 'none'}},
+                {maxWidth: 700, width: 400, height: 200, options: {textSize: 10}, parentCss: {'float': 'none', textAlign: 'center'}}
+            ]
+        }
+    }).draw();
+}
+
+const meterChart = () => {
+    var meter = new RGraph.Meter({
+        id: 'meter-chart',
+        min: 0,
+        max: 100,
+        value: 46,
+        options: {
+            marginTop: 20,
+            marginBottom: 20,
+            marginLeft: 20,
+            marginRight: 20,
+            anglesStart: RGraph.PI + 0.2,
+            anglesEnd: RGraph.TWOPI - 0.2,
+            linewidthSegments: 10,
+            textSize: 14,
+            colorsStroke: 'white',
+            segmentsRadiusStart: 210,
+            border: 0,
+            tickmarksSmallCount: 0,
+            tickmarksLargeCount: 0,
+            adjustable: true,
+            needleRadius: 190,
+            needleHeadWidth: 0.05
+        }
+    }).on('draw', function (obj)
     {
-        bar_bg.set('labelsAbove', true);
-        RGraph.SVG.redraw();
-    }});
+        // Determine the color
+        if (obj.value < 10) {
+            var color = 'red';
+        } else if (obj.value < 35) {
+            var color = '#cc0';
+        } else {
+            var color = 'green';
+        }
+    
+        RGraph.text({
+            object: obj,
+            x:      obj.centerx,
+            y:      obj.centery - 25,
+            text:   obj.value.toFixed(0) + '%',
+            size:   75,
+            halign: 'center',
+            color:  color
+        
+        });
+    }).draw();
 }
 
 beigneChart();
 svgHorChart();
+radarChart();
+meterChart();

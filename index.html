@@ -4,43 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="./assets/js/header.js" defer></script>
     <script src="./assets/js/RGraph.common.core.js" defer></script>
     <script src="./assets/js/RGraph.segmented.js" defer></script>
     <script src="./assets/js/RGraph.svg.common.core.js" defer></script>
     <script src="./assets/js/RGraph.svg.hbar.js" defer></script>
+    <script src="./assets/js/RGraph.radar.js" defer></script>
+    <script src="./assets/js/RGraph.meter.js" defer></script>
+    <script src="./assets/js/RGraph.common.dynamic.js" defer></script>
     <script src="./assets/js/main.js" defer></script>
-    <title>Exemple RGraph</title>
+    <title>TL1 | RGRAPH</title>
 </head>
 <body>
     <header>
-        <h1>Travail long 01 - Graphiques RGraph</h1>
+        <div class="header-title">
+            <h1>Graphiques <span class="gras">RGRAPH</span></h1>
+            <p>Une librairie très pratique!</p>
+            <div class="border top"></div>
+        </div>
     </header>
     <main>
-        <div class="graphique-circulaire">
-            <h2>Diagramme circulaire segmenté</h2>
-            <canvas id="cvs" width="350" height="350">[No canvas support]</canvas>
-        </div>
-    
-        <div style="float: right">
-            <h2>Diagramme à barres horizontales</h2>
-            <div style="width: 500px; height: 300px; display: inline-block; background-color: black" id="chart-container"></div>
-        </div>
-        <div>
-            <h2>Diagramme</h2>
-        </div>
-        <div>
-            <h2>Diagramme</h2>
-        </div>
-        <div>
-            <h2>Diagramme</h2>
-        </div>
-        <div>
-            <h2>Diagramme</h2>
-        </div>
-
+        <section class="container-graph">
+            <h2 class="grid-title">Attrait touristique pour les activités de plein air au Québec</h2>
+            <div class="graphique-circulaire">
+                <h3>Séjour d'une nuit en plein air au Québec</h3>
+                <canvas id="cvs"></canvas>
+            </div>
+        
+            <div class="graphique-barres-h">
+                <h3>Activités pratiquées par les touristes au Québec</h3>
+                <div style="width: 15rem; height: 15rem; display: inline-block; background-color: black" id="chart-container">
+                </div>
+            </div>
+            <div class="graphique3">
+                <h3>Positionnement du Québec en tant que destination de plein air et de nature</h3>
+                <canvas id="radar-chart" width="500" height="500"></canvas>
+            </div>
+            <div class="graphique4">
+                <h3>Types de séjour les plus populaires</h3>
+                <p>Les voyages de « nature, plein air et aventure »</p>
+                <canvas id="meter-chart" width="500" height="300"></canvas>
+            </div>
+            <div class="graphique5">
+                <h3>Diagramme</h3>
+                <div>
+                    <span>Un Graphique</span>
+                </div>
+            </div>
+            <div class="graphique6">
+                <h3>Diagramme</h3>
+                <div>
+                    <span>Un Graphique</span>
+                </div>
+            </div>
+        </section>
+        <section class="references">
+            Les données des graphiques présentés proviennent des faits saillants du <strong><a href="https://cdn-contenu.quebec.ca/cdn-contenu/tourisme/etudes-statistiques/RA-position-tourisme-pleinAir-et-nature-tourisme.pdf">sondage Leger</a></strong> mené auprès des adeptes d’activités de plein air et en nature en période estivale et hivernale pour le ministère du Tourisme du Québec.
+        </section>
     </main>
     <footer>
-        <span>Eve Cloutier et Eve-Lyne Gagnon | <time datetime="2024-06-07">7 juin 2024</time><span>
+        <div class="border bottom"></div>
+        <div class="authors">
+            <p>Travail long 01 · Production d'interfaces interactives animées</p>
+            <p>EVE CLOUTIER · EVE-LYNE GAGNON</p>
+            <p><time datetime="2024-06-07">7 juin 2024</time></p>
+        </div>
     </footer>
 </body>
 </html>
