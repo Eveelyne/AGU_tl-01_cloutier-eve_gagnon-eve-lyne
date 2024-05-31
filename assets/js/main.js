@@ -1,3 +1,5 @@
+
+//GRAPHIQUE 1
 const beigneChart = () => {
     segmented = new RGraph.Segmented({
         id: 'cvs',
@@ -5,23 +7,24 @@ const beigneChart = () => {
         value: 15,
         options: {
             labelsCenterUnitsPost: '%',
-            labelsCenterColor: '#aaa',
+            labelsCenterColor: '#6C733D',
             responsive: [
-                {maxWidth: null, width: 350, height: 350, options: {width: 55, labelsCenterSize: 60}, parentCss: {'float': 'right', textAlign: 'none'}},
-                {maxWidth: 700, width: 250, height: 250, options: {width: 40, labelsCenterSize: 45}, parentCss: {'float': 'none', textAlign: 'center'}}
+                {maxWidth: null, width: 350, height: 350, options: {width: 80, labelsCenterSize: 40}, parentCss: {'float': 'right', textAlign: 'none'}},
+                {maxWidth: 700, width: 250, height: 250, options: {width: 50, labelsCenterSize: 25}, parentCss: {'float': 'none', textAlign: 'center'}}
             ]
         }
-    }).roundRobin({frames: 60});
+    }).roundRobin({frames: 40});
 
     segmented.canvas.addEventListener('click', function (e) {
         var value = segmented.getValue(e);
-        if (value) {
+        /*if (value) {
             segmented.value = value;
             segmented.grow();
-        }
+        }*/
     }, false);
 }
 
+//GRAPHIQUE 2
 const svgHorChart = () => {
     data = [90, 42, 40, 31, 25];
     labels = ['Randonnée pédestre', 'Baignade/plage', 'Camping (tente)', 'Vélo', 'Camping (VR)'];
@@ -68,6 +71,7 @@ const svgHorChart = () => {
     });
 }
 
+//GRAPHIQUE 3
 const radarChart = () => {
     var radar = new RGraph.Radar({
         id: 'radar-chart',
@@ -88,6 +92,8 @@ const radarChart = () => {
     }).draw();
 }
 
+
+//GRAPHIQUE 4
 const meterChart = () => {
     var meter = new RGraph.Meter({
         id: 'meter-chart',
@@ -136,7 +142,119 @@ const meterChart = () => {
     }).draw();
 }
 
+// GRAPHIQUE 5
+const bipolarChart = () => {
+
+    // The Bipolar chart accepts two arrays of data - one for the left side and one for the right.
+    left  = [[39],[38],[38], [38], [38]];
+    right = [[34],[34],[34], [32], [30]];
+    
+    new RGraph.Bipolar({
+        id: 'cvs-bipolar',
+        left: left,
+        right: right,
+        options: {
+            backgroundGridHlines: false,
+            backgroundGridBorder: false,
+            titleLeftBold: true,
+            titleLeftSize: 16,
+            titleRightBold: true,
+            titleRightSize: 16,
+            colors: ['#385644'],
+            marginInner:15,
+            yaxisLabels: ['Hôtellerie', 'Baignade', 'Randonnée', 'Chalet','Ornithologie' ],
+            yaxisLabelsSize: 16,
+            tooltips: '<b>Results:</b><br/>%{key}',
+            tooltipsFormattedKeyLabels: ['8pm','9pm','10pm'],
+            titleLeft: 'Plutôt attrayante',
+            titleRight: 'Très attrayante',
+            marginBottom: 30,
+            xaxis: false,
+            tooltipsCss: {
+                fontSize: '16pt',
+                textAlign: 'left'
+            }
+        }
+    }).draw();
+}
+
+// GRAPHIQUE 6
+const rotatingChart = () => {
+    // This function is called when a tooltip is about to be shown
+    // and removes linebreaks from the text
+    function removeLinebreak (str)
+    {
+        return str.replace(/\r?\n/g, ': ');
+    }
+
+    // This adds the StarBurst effect to the background canvas. It uses either the
+    // requestAnimationFrame() function or the setTimeout() function to animate itself.
+    // You can of course turn the animation off if you choose.
+    sb = new RGraph.StarBurst({
+        id: 'cvs_background',
+        options: {
+        }
+    }).draw();
+
+    // Define the data and the labels
+    data        = [3,13,47,58,67];
+    labelsAbove = ['Québec', 'Ontario', 'É.-U.', 'Europe', 'Autre'];
+    
+    // Create the labels that go at the top of each bar
+    labelsAbove.forEach(function (v, k, arr)
+    {
+        arr[k] = v + '\r\n%1 %'.format(data[k]);
+    });
+
+    // Create a Bar chart and add it to the foreground canvas tag. There are no
+    // xaxisLabels defined, though the labelsAbove labels from above are present
+    // and configured to appear at the top of each bar.
+    bar = new RGraph.Bar({
+        id: 'cvs_foreground',
+        data: data,
+        options: {
+            marginTop: 22,
+            marginLeft: 5,
+            marginRight: 5,
+            marginBottom: 0,
+            xaxisLinewidth: 3,
+            xaxisTickmarksCount: 0,
+            yaxis: false,
+            yaxisScale: false,
+            colors: ['#385644'],
+            backgroundGrid: false,
+            shadow: false,
+            tooltipsCss: {
+                fontSize: '20pt',
+                fontWeight: 'bold'
+            },
+            labelsAbove: true,
+            tooltips: "<center>%{function:removeLinebreak('%{property:labelsAboveSpecific[%{dataset}]}')}</center>",
+            labelsAboveSpecific: labelsAbove,
+            labelsAboveColor: '#202426',
+            labelsAboveBold: true,
+            labelsAboveItalic: false,
+            labelsAboveOffsetx: -2,
+            labelsAboveOffsety: -10,
+            labelsAboveSize: 16,
+            labelsAboveFont: '"Lato", sans-serif',
+                
+            // The responsive configuration for this chart, because it
+            // has the StarBurst behind it, is quite large
+            responsive: [
+                {maxWidth: null,width: 600,height: 230.77,options: {marginInner:25,labelsAboveSize: 10,labelsAboveOffsety: 0},callback: function (){sb.canvas.width = 600,sb.canvas.height = 230.77;sb.set('centerx', 200);sb.set('centery', 50);document.getElementById('cvs_foreground').parentNode.style.width = '600px';document.getElementById('cvs_foreground').parentNode.style.height = '230.77px';RGraph.redraw();}},
+                {maxWidth: 900,width: 323,height: 121,options: {marginInner:10, labelsAboveSize:7, labelsAboveOffsety:0},callback: function (){sb.canvas.width = 323,sb.canvas.height = 121;sb.set('centerx', 121);sb.set('centery', 30);document.getElementById('cvs_foreground').parentNode.style.width = '323px';document.getElementById('cvs_foreground').parentNode.style.height = '121px';document.getElementById('cvs_foreground').__object__.draw();}}
+            ]
+        }
+    // The responsive function for this chart, because it has the StarBurst behind it,
+    // is quite large
+    }).wave();
+}
+
 beigneChart();
 svgHorChart();
 radarChart();
 meterChart();
+bipolarChart();
+rotatingChart();
+

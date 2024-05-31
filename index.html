@@ -7,15 +7,21 @@
     <script src="./assets/js/header.js" defer></script>
     <script src="./assets/js/RGraph.common.core.js" defer></script>
     <script src="./assets/js/RGraph.segmented.js" defer></script>
-    <script src="./assets/js/RGraph.svg.common.core.js" defer></script>
+<script src="./assets/js/RGraph.svg.activity.js" defer></script>
+    <script src="./assets/js/RGraph.svg.common.core.js" 
+    defer></script>
     <script src="./assets/js/RGraph.svg.hbar.js" defer></script>
     <script src="./assets/js/RGraph.radar.js" defer></script>
     <script src="./assets/js/RGraph.meter.js" defer></script>
     <script src="./assets/js/RGraph.common.dynamic.js" defer></script>
+    <script src="./assets/js/RGraph.bipolar.js"></script>
+    <script src="./assets/js/RGraph.common.starburst.js" defer></script>
+    <script src="./assets/js/RGraph.common.tooltips.js" defer></script>
+    <script src="./assets/js/RGraph.bar.js" defer></script>
     <script src="./assets/js/main.js" defer></script>
     <title>TL1 | RGRAPH</title>
 </head>
-<body>
+<body class="wrapper">
     <header>
         <div class="header-title">
             <h1>Graphiques <span class="gras">RGRAPH</span></h1>
@@ -25,20 +31,22 @@
     </header>
     <main>
         <section class="container-graph">
-            <h2 class="grid-title">Attrait touristique pour les activités de plein air au Québec</h2>
-            <div class="graphique-circulaire">
-                <h3>Séjour d'une nuit en plein air au Québec</h3>
-                <canvas id="cvs"></canvas>
+            <h2 class="grid-title">Attrait touristique pour les activités de plein air</h2>
+            <div class="graphique1">
+                <h3>Premier séjour hivernal d'une nuit en plein air</h3>
+                <p>85 % des répondants avaient dèjà une expérience de plein air au Québec.</p>
+                <canvas class="graphique-rond" id="cvs"></canvas>
             </div>
-        
-            <div class="graphique-barres-h">
+            <div class="graphique2 graphique-barres-h">
                 <h3>Activités pratiquées par les touristes au Québec</h3>
+                <p>Texte</p>
                 <div style="width: 15rem; height: 15rem; display: inline-block; background-color: black" id="chart-container">
                 </div>
             </div>
             <div class="graphique3">
                 <h3>Positionnement du Québec en tant que destination de plein air et de nature</h3>
-                <canvas id="radar-chart" width="500" height="500"></canvas>
+                <p>Texte</p>
+                <div><canvas id="radar-chart" width="500" height="500"></canvas></div>
             </div>
             <div class="graphique4">
                 <h3>Types de séjour les plus populaires</h3>
@@ -46,20 +54,25 @@
                 <canvas id="meter-chart" width="500" height="300"></canvas>
             </div>
             <div class="graphique5">
-                <h3>Diagramme</h3>
-                <div>
-                    <span>Un Graphique</span>
+                <h3>Activités les plus attrayantes</h3>
+                <p>Les Canadiens sont moins nombreux à juger ces activités très attrayantes.</p>
+                <div class="graphique-bipolar">
+                    <div>
+                        <canvas id="cvs-bipolar" width="650" height="250"></canvas>
+                    </div>
                 </div>
             </div>
             <div class="graphique6">
-                <h3>Diagramme</h3>
-                <div>
-                    <span>Un Graphique</span>
+                <h3>Première visite en territoire québécois</h3>
+                <p>Participation des voyageurs à des activités de plein air durant leur premier séjour dans la province.</p>
+                <div class="graphique-soleil">
+                    <canvas id="cvs_background"></canvas>
+                    <canvas id="cvs_foreground"></canvas>
                 </div>
             </div>
         </section>
         <section class="references">
-            Les données des graphiques présentés proviennent des faits saillants du <strong><a href="https://cdn-contenu.quebec.ca/cdn-contenu/tourisme/etudes-statistiques/RA-position-tourisme-pleinAir-et-nature-tourisme.pdf">sondage Leger</a></strong> mené auprès des adeptes d’activités de plein air et en nature en période estivale et hivernale pour le ministère du Tourisme du Québec.
+            Les données des graphiques présentés proviennent des faits saillants du <strong><a href="https://cdn-contenu.quebec.ca/cdn-contenu/tourisme/etudes-statistiques/RA-position-tourisme-pleinAir-et-nature-tourisme.pdf" target="_blank" aria-label="Principaux faits saillants sur l'Attractivité et le positionnement de la nature et du plein air comme expérience touristique, Léger 2023-06-20">sondage Leger</a></strong> mené auprès des adeptes d’activités de plein air et en nature en période estivale et hivernale pour le ministère du Tourisme du Québec.
         </section>
     </main>
     <footer>

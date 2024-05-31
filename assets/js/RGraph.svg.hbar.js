@@ -259,7 +259,7 @@
             yaxisTitleValign:     null,
 
             textColor:            'black',
-            textFont:             'Arial, Verdana, sans-serif',
+            textFont:             'Lato, sans-serif',
             textSize:             12,
             textBold:             false,
             textItalic:           false,

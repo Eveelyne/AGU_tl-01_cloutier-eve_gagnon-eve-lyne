@@ -22,19 +22,15 @@ html {
     overflow-x: hidden;
 }
 
-html {
-    scroll-padding-top: 300px;
-    scroll-behavior: smooth;
-}
-
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding-top: 5rem;
     font-family: "Lato", sans-serif;
     width: 100%;
+    min-height: 100vh;
     overflow-x: hidden;
 }
 
@@ -52,26 +48,35 @@ h1 {
 }
 
 h2 {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    color: var(--green-d-color);
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     text-transform: uppercase;
 }
 
 h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: var(--green-m-color);
-    padding-bottom: 1rem;
+    background-color: var(--green-p-color);
+    color: var(--green-d-color);
+    padding: 1rem 2rem;
+    text-align: center;
+    margin-top: 3rem;
+    width: 100%;
+}
+
+p {
+    padding-bottom: 0.3rem;
+    text-align: center;
 }
 
 a {
-    color: var(--green-d-color);
+    color: var(--green-m-color);
 }
 
 a:hover {
-    color: var(--grey-color);
+    color: var(--grenn-d-color);
 }
 
 span {
@@ -98,7 +103,7 @@ header {
     align-items: center;
     background-color: var(--black-color);
     width: 100%;
-    padding-top: 1rem;
+    padding-top: 2rem;
 }
 
 .header-title h2 {
@@ -136,12 +141,10 @@ header {
 
 .minimized .header-title {
     display: flex;
+    padding-top: 0.5rem;
 }
 
-.minimized .header-title h2 {
-    display: none;
-}
-
+.minimized .header-title h2,
 .minimized .header-title p {
     display: none;
 }
@@ -151,33 +154,33 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 6rem 2rem;
+    padding: 2rem 0;
     width: 100%;
 }
 
 .references {
-    padding: 2rem 1rem;
+    margin-top: 2rem;
+    padding: 2rem;
     background-color: var(--grey-color);
     border: solid var(--green-p-color) 2px;
-    width: 100%;
+    width: 80%;
     box-sizing: border-box;
 }
 
 .container-graph {
-    display: grid;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
     padding-bottom: 2rem;
     width: 100%;
     box-sizing: border-box;
 }
 
 /*GRAPHIQUES*/
-.graphique3, .graphique4, .graphique5, .graphique6 {
-    grid-column: 1 / 4;
+.graphique1,.graphique2, .graphique3, .graphique4, .graphique5, .graphique6 {
     width: 100%;
 }
 
-.canvas-container {
+.canvas-container { 
     width: 100%;
     max-width: 100%;
     overflow: hidden;
@@ -188,27 +191,29 @@ canvas {
     height: auto !important;
 }
 
-/*GRAPHIQUE 1*/
 .grid-title {
     display: grid;
-    grid-column: 1 / 4;
+    grid-column: 1/4;
     text-align: center;
-    padding: 1rem;
+    padding: 2rem 2rem 1rem;
 }
 
-.graphique-circulaire {
-    grid-column: 1 / 4;
+h3 + p {
+    padding: 0.5rem 2rem;
+    margin-bottom: 1rem;
+    background-color: var(--green-m50-color);
+    box-shadow: 3px 3px 5px var(--green-m50-color);
 }
 
-.center-color {
-    color: var(--black-color);
+/*GRAPHIQUE 1*/
+.graphique-rond {
+    max-width: 80%;
+    padding: 0 2rem;
 }
 
 /*GRAPHIQUE 2*/
-.graphique-barres-h {
-    grid-column: 1 / 4;
-}
 
+/*GRAPHIQUE 3*/
 
 /*GRAPHIQUE 4*/
 .graphique4 {
@@ -219,6 +224,54 @@ canvas {
 
 #meter-chart {
     width: 100%;
+}
+
+/*GRAPHIQUE 5*/
+.graphique-bipolar {
+    display: flex;
+}
+
+#cvs-bipolar {
+    display: flex;
+    max-width: 100%;
+    height: auto;
+    padding: 0 1rem;
+}
+
+/*GRAPHIQUE 6*/
+.graphique6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+
+.container-soleil {
+    justify-content: center;
+    align-items: center;
+}
+
+.graphique-soleil {
+    position: relative;
+    max-width: 100%; 
+    height: auto;
+}
+
+#cvs_background {
+    position: relative; 
+    max-width: 100%; 
+    height: auto;
+    top: 0; 
+    left: 0;
+}
+
+#cvs_foreground {
+    position: absolute; 
+    max-width: 100%;
+    height: auto; 
+    top: 0; 
+    left: 0;
 }
 
 /*FOOTER*/
@@ -244,57 +297,96 @@ footer {
 
 /*tablette*/
 @media screen and (min-width: 768px){
-    h1 {
-        font-size: 3rem;
-    }
-
     main {
-        padding: 4rem 2rem;
+        padding: 5rem 2rem;
     }
     
-    .grid-title {
-        grid-column: 1 / 4;
-        text-align: center;
-    }
-
-    .graphique-circulaire {
-        justify-self: center;
-    }
-} 
-
-/*desktop*/
-@media screen and (min-width: 1024px){
-    body {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    main {
-        padding: 4rem 4rem;
-    }
-
-    .graphique-barres-h {
-        grid-column: auto;
-    }
-
-    .graphique-circulaire {
-        grid-column: auto;
-    }
-
-    .graphique3, .graphique4, .graphique5, .graphique6 {
-        grid-column: auto;
-    }
-
     .container-graph {
-        grid-template-columns: repeat(4, 1);
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        gap: 2rem;
+        justify-content: center;
+        align-items: baseline;
     }
 
-    .grid-title {
-        grid-column: 1 / 4;
+    h1 {
+        font-size: 3rem;
     }
 
     h2 {
         font-size: 1.7rem;
     }
+
+    h3 {
+        background-color: transparent;
+        text-align: left;
+        margin-top: 1rem;
+    }
+
+    h3 + p {
+        background-color: transparent;
+        box-shadow: none;
+        text-align: left;
+    }
+
+    p {
+        padding-bottom: 1rem;
+    }
+
+    .grid-title {
+        grid-column: 1/3;
+    }
+
+    .graphique-rond {
+        max-width: 80%;
+    }
+
+    .references {
+        width: 100%;
+    }
+    }
+
+/*desktop*/
+@media screen and (min-width: 1024px){
+    body .wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    main {
+        max-width: 1700px;
+        margin: 0 auto;
+    }
+
+    .container-graph {
+        display: grid;
+        grid-template-columns: repeat(3, 33.33%);
+        gap: 3rem;
+    }
+
+    .grid-title {
+        grid-column: 1/4;
+    }
+
+    .graphique6 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*.graphique-barres-h {
+        grid-column: auto;
+    }*/
+
+    /*.graphique-circulaire {
+        grid-column: auto;
+    }*/
+
+    /*.graphique3, .graphique4, .graphique5, .graphique6 {
+        grid-column: auto;
+    }*/
 }

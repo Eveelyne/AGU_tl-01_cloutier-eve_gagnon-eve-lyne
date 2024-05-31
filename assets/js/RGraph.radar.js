@@ -130,7 +130,7 @@
             backgroundGridSpokes: 24,
 
             textSize:             12,
-            textFont:             'Arial, Verdana, sans-serif',
+            textFont:             'Lato, sans-serif',
             textColor:            'black',
             textBold:             false,
             textItalic:           false,

@@ -70,17 +70,17 @@
             centery:                            null,
             width:                              null,
 
-            marginLeft:                            15,
-            marginRight:                           15,
-            marginTop:                             15,
-            marginBottom:                          15,
+            marginLeft:                            16,
+            marginRight:                           16,
+            marginTop:                             0,
+            marginBottom:                          0,
 
-            backgroundColor:                    'black',
-            colors:                             ['red','#ddd'],
+            backgroundColor:                    'white',
+            colors:                             ['#9DA65D','#202426'],
             
-            textFont:                              'Arial, Verdana, sans-serif',
+            textFont:                              'Lato',
             textSize:                              null,
-            textColor:                             'gray',
+            textColor:                             '#9DA65D',
             textBold:                              false,
             textItalic:                            false,
             textAccessible:                        false,
@@ -107,12 +107,12 @@
             labelsCenterOffsetx:                       0,
             labelsCenterOffsety:                       0,
 
-            radialsCount:                       36,
+            radialsCount:                       100,
 
             contextmenu:                        null,
 
             annotatable:                        false,
-            annotatableColor:                   'black',
+            annotatableColor:                   '#385644',
 
             adjustable:                         false,
             

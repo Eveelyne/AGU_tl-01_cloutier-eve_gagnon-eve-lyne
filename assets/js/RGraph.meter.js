@@ -72,7 +72,7 @@
             border:                 			true,
             borderColor:           				'black',
             
-            textFont:              				'Arial, Verdana, sans-serif',
+            textFont:              				'Lato, sans-serif',
             textSize:              				12,
             textColor:             				'black',
             textBold:              				false,
