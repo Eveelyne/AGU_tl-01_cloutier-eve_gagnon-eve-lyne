@@ -27,23 +27,28 @@ const beigneChart = () => {
 //GRAPHIQUE 2
 const svgHorChart = () => {
     data = [90, 42, 40, 31, 25];
-    labels = ['Randonnée pédestre', 'Baignade/plage', 'Camping (tente)', 'Vélo', 'Camping (VR)'];
+    labels = ['Randonnée', 'Baignade/plage', 'Camping (tente)', 'Vélo', 'Camping (VR)'];
 
     bar_bg = new RGraph.SVG.HBar({
         id: 'chart-container',
         data: [1, 1, 1, 1, 1],
         options: {
-            colors: ['gray'],
+            colors: ['#CCCCCC'],
             xaxisScale: false,
             backgroundGrid: false,
             marginInner: 5,
             yaxisLabels: labels,
-            textColor: 'rgba(0,0,0,0)',
-            labelsAboveColor: 'white',
+            textColor: 'black',
+            labelsAboveColor: 'black',
             labelsAboveSpecific: data,
+            corner: {
+                round: true,
+                roundRadius: 10,
+            },
             responsive: [
-                {maxWidth: null, width: 500, height: 300, options: {textSize: 12}, parentCss: {'float': 'right', textAlign: 'none'}},
-                {maxWidth: 800, width: 400, height: 250, options: {textSize: 10}, parentCss: {'float': 'none', textAlign: 'center'}}
+                {maxWidth: 1024, width: 500, height: 200, options: {textSize: 12}},
+                {maxWidth: 768, width: 350, height: 200, options: {textSize: 10}},
+                {maxWidth: 480, width: 300, height: 200, options: {textSize: 8}}
             ]
         }
     }).draw();
@@ -52,15 +57,16 @@ const svgHorChart = () => {
         id: 'chart-container',
         data: data,
         options: {
-            colors: ['orange'],
+            colors: ['#9DA65D'],
             textColor: 'white',
             yaxisLabels: labels,
             xaxisScale: false,
             backgroundGrid: false,
             marginInner: 5,
             responsive: [
-                {maxWidth: null, width: 500, height: 300, options: {textSize: 12}},
-                {maxWidth: 700, width: 300, height: 250, options: {textSize: 10}}
+                {maxWidth: 1024, width: 500, height: 200, options: {textSize: 12}},
+                {maxWidth: 768, width: 350, height: 200, options: {textSize: 10}},
+                {maxWidth: 480, width: 300, height: 200, options: {textSize: 8}}
             ]
         }
     }).grow({
@@ -78,7 +84,7 @@ const radarChart = () => {
         data: [40, 27, 33, 32, 32, 29],
         options: {
             labels: ['Amical', 'Sécuritaire', 'Dépaysant', 'Authentique', 'Unique', 'Familiale'],
-            colors: ['#385644'],
+            colors: ['rgba(252, 100, 113, 0.5)'],
             textSize: 12,
             textColor: 'black',
             backgroundGrid: true,
@@ -101,28 +107,28 @@ const meterChart = () => {
         max: 100,
         value: 46,
         options: {
-            marginTop: 20,
-            marginBottom: 20,
+            marginTop: 10,
+            marginBottom: 10,
             marginLeft: 20,
             marginRight: 20,
-            anglesStart: RGraph.PI + 0.2,
-            anglesEnd: RGraph.TWOPI - 0.2,
+            anglesStart: RGraph.PI + 0.5,
+            anglesEnd: RGraph.TWOPI - 0.5,
             linewidthSegments: 10,
             textSize: 14,
             colorsStroke: 'white',
-            segmentsRadiusStart: 210,
+            segmentsRadiusStart: 240,
             border: 0,
             tickmarksSmallCount: 0,
             tickmarksLargeCount: 0,
             adjustable: true,
-            needleRadius: 190,
+            needleRadius: 200,
             needleHeadWidth: 0.05
         }
     }).on('draw', function (obj)
     {
         // Determine the color
         if (obj.value < 10) {
-            var color = 'red';
+            var color = '#FC6471';
         } else if (obj.value < 35) {
             var color = '#cc0';
         } else {
@@ -131,13 +137,12 @@ const meterChart = () => {
     
         RGraph.text({
             object: obj,
-            x:      obj.centerx,
-            y:      obj.centery - 25,
+            x:      obj.centerx + 10,
+            y:      obj.centery - 50,
             text:   obj.value.toFixed(0) + '%',
-            size:   75,
+            size:   50,
             halign: 'center',
             color:  color
-        
         });
     }).draw();
 }

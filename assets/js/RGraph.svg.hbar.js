@@ -176,7 +176,7 @@
                 'red', '#0f0', '#00f', '#ff0', '#0ff', '#0f0','pink','orange','gray','black'
             ],
             colorsSequential:     false,
-            colorsStroke:          'rgba(0,0,0,0)',
+            colorsStroke:          'white',
 
             marginInner:              3,
             marginInnerGrouped:       2,
@@ -184,10 +184,10 @@
             marginInnerBottom:        0,
 
             xaxis:                true,
-            xaxisLinewidth:       1,
+            xaxisLinewidth:       2,
             xaxisTickmarks:       true,
             xaxisTickmarksLength: 5,
-            xaxisColor:           'black',
+            xaxisColor:           '#385644',
             xaxisLabels:          [],
             xaxisLabelsOffsetx:   0,
             xaxisLabelsOffsety:   0,
@@ -223,9 +223,9 @@
             xaxisTitleValign:     null,
 
             yaxis:                true,
-            yaxisLinewidth:       1,
-            yaxisTickmarks:       true,
-            yaxisTickmarksLength: 3,
+            yaxisLinewidth:       2,
+            yaxisTickmarks:       false,
+            yaxisTickmarksLength: 5,
             yaxisTickmarksCount: 5,
             yaxisLabels:          [],
             yaxisLabelsPosition:  'section',
@@ -233,11 +233,11 @@
             yaxisLabelsOffsety:   0,
             yaxisScale:           false,
             yaxisLabelsPositionSectionTickmarksCount: null,
-            yaxisColor:           'black',
-            yaxisLabelsFont:      null,
-            yaxisLabelsSize:      null,
-            yaxisLabelsColor:     null,
-            yaxisLabelsBold:      null,
+            yaxisColor:           '#385644',
+            yaxisLabelsFont:      true,
+            yaxisLabelsSize:      true,
+            yaxisLabelsColor:     '#385644',
+            yaxisLabelsBold:      true,
             yaxisLabelsItalic:    null,
             yaxisPosition:        'left',
             yaxisLabelsFormattedDecimals:  0,
@@ -258,10 +258,10 @@
             yaxisTitleHalign:     null,
             yaxisTitleValign:     null,
 
-            textColor:            'black',
+            textColor:            '#385644',
             textFont:             'Lato, sans-serif',
-            textSize:             12,
-            textBold:             false,
+            textSize:             14,
+            textBold:             true,
             textItalic:           false,
             text:                 null,
             
@@ -305,7 +305,7 @@
             labelsInbarOffsety:           0,
             labelsInbarSpecific:          null,
 
-            linewidth:            1,
+            linewidth:            3,
             grouping:             'grouped',
             
             tooltips:                        null,
@@ -351,16 +351,16 @@
             titleSubtitleBold:    null,
             titleSubtitleItalic:  null,
             
-            shadow:               false,
-            shadowOffsetx:        2,
-            shadowOffsety:        2,
+            shadow:               true,
+            shadowOffsetx:        1,
+            shadowOffsety:        3,
             shadowBlur:           2,
-            shadowColor:          'rgba(0,0,0,0.25)',
+            shadowColor:          'rgba(0,0,0,0.1)',
 
 
 
             key:              null,
-            keyColors:        null,
+            keyColors:        'null',
             keyOffsetx:       0,
             keyOffsety:       0,
             keyLabelsOffsetx: 0,

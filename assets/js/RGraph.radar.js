@@ -107,7 +107,7 @@
             labelsOffsetRadius:   0,
 
             labelsBackgroundFill: 'white',
-            labelsBoxed:           false,
+            labelsBoxed:           true,
 
             labelsAxes:            '',
             labelsAxesFont:       null,
@@ -124,10 +124,10 @@
             labelsAxesOffsety:    0,
 
             backgroundGrid:    true,
-            backgroundGridCount: null,
+            backgroundGridCount: 5,
             backgroundGridColor: '#ddd',
             backgroundGridPoly:  true,
-            backgroundGridSpokes: 24,
+            backgroundGridSpokes: 6,
 
             textSize:             12,
             textFont:             'Lato, sans-serif',
@@ -248,18 +248,18 @@
 
             yaxisTickmarksCount:  5,
 
-            axesColor:           'rgba(0,0,0,0)',
+            axesColor:           'rgba(255,255,255,0.2)',
 
             tickmarks:           true,
             tickmarksStroke:     null,
-            tickmarksFill:       'white',
+            tickmarksFill:       'rgba(255,255,255,0.6)',
             tickmarksLinewidth:  null,
-            tickmarksRadius:     5,
+            tickmarksRadius:     3,
 
             fillClick:           null,
             fillMousemove:       null,
             fillTooltips:        null,
-            fillHighlightFill:   'rgba(255,255,255,0.7)',
+            fillHighlightFill:   'rgba(255,255,255,0.2)',
             fillHighlightStroke: 'rgba(0,0,0,0)',
             fillMousemoveRedraw: false,
 

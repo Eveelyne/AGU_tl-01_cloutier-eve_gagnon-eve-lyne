@@ -59,8 +59,8 @@
             backgroundImageStretch: 			true,
             backgroundColor:       				'white',
 
-            marginLeft:                         35,
-            marginRight:           				35,
+            marginLeft:                         10,
+            marginRight:           				10,
             marginTop:             				35,
             marginBottom:          				35,
 
@@ -75,7 +75,7 @@
             textFont:              				'Lato, sans-serif',
             textSize:              				12,
             textColor:             				'black',
-            textBold:              				false,
+            textBold:              				true,
             textItalic:            				false,
             textValign:            				'center',
             textAccessible:               		false,
@@ -135,13 +135,13 @@
 
             colorsGreenStart:            		((this.max - this.min) * 0.35) + this.min,
             colorsGreenEnd:              		this.max,
-            colorsGreenColor:            		'#207A20',
+            colorsGreenColor:            		'#9DA65D',
             colorsYellowStart:           		((this.max - this.min) * 0.1) + this.min,
             colorsYellowEnd:             		((this.max - this.min) * 0.35) + this.min,
-            colorsYellowColor:           		'#D0AC41',
+            colorsYellowColor:           		'#D6B22D',
             colorsRedStart:              		this.min,
             colorsRedEnd:                		((this.max - this.min) * 0.1) + this.min,
-            colorsRedColor:              		'#9E1E1E',
+            colorsRedColor:              		'#FC6471',
             colorsRanges:          				null,
 
             contextmenu:            			null,
@@ -149,14 +149,14 @@
             annotatable:            			false,
             annotatableColor:      				'black',
 
-            shadow:                 			false,
-            shadowColor:           				'rgba(0,0,0,0.5)',
+            shadow:                 			true,
+            shadowColor:           				'rgba(0,0,0,0.2)',
             shadowBlur:            				3,
-            shadowOffsetx:         				3,
-            shadowOffsety:         				3,
+            shadowOffsetx:         				1,
+            shadowOffsety:         				1,
 
-            resizable:                   		false,
-            resizableHandleAdjust:     			[0,0],
+            resizable:                   		true,
+            resizableHandleAdjust:     			[5,5],
             resizableHandleBackground: 			null,
 
             tickmarksSmallCount:    			100,
@@ -176,9 +176,9 @@
 
             segmentsRadiusStart:     			0,
 
-            needleRadius:            			null,
+            needleRadius:            			true,
             needleType:              			'normal',
-            needleTail:              			false,
+            needleTail:              			true,
             needleHead:              			true,
             needleHeadLength:       			30,
             needleHeadWidth:        			0.088,
@@ -187,12 +187,12 @@
             needleImageOffsetx:     			0,
             needleImageOffsety:     			0,
 
-            adjustable:               			false,
+            adjustable:               			true,
 
             anglesStart:             			RGraph.PI,
             anglesEnd:               			RGraph.TWOPI,
 
-            centerpinStroke:         			'black',
+            centerpinStroke:         			'#CCCCCC',
             centerpinFill:           			'white',
 
             clearto:   							'rgba(0,0,0,0)'
