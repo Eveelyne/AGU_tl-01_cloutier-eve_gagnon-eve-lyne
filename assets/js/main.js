@@ -140,7 +140,7 @@ const meterChart = () => {
             x:      obj.centerx + 10,
             y:      obj.centery - 50,
             text:   obj.value.toFixed(0) + '%',
-            size:   50,
+            size:   40,
             halign: 'center',
             color:  color
         });
