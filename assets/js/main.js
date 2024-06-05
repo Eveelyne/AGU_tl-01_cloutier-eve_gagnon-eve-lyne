@@ -47,7 +47,7 @@ const svgHorChart = () => {
             },
             responsive: [
                 {maxWidth: 1024, width: 500, height: 200, options: {textSize: 12}},
-                {maxWidth: 768, width: 350, height: 200, options: {textSize: 10}},
+                {maxWidth: 768, width: 325, height: 200, options: {textSize: 10}},
                 {maxWidth: 480, width: 300, height: 200, options: {textSize: 8}}
             ]
         }
@@ -65,7 +65,7 @@ const svgHorChart = () => {
             marginInner: 5,
             responsive: [
                 {maxWidth: 1024, width: 500, height: 200, options: {textSize: 12}},
-                {maxWidth: 768, width: 350, height: 200, options: {textSize: 10}},
+                {maxWidth: 768, width: 325, height: 200, options: {textSize: 10}},
                 {maxWidth: 480, width: 300, height: 200, options: {textSize: 8}}
             ]
         }
